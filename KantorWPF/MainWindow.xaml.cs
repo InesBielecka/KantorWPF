@@ -83,6 +83,7 @@ namespace KantorWPF
         {
 
 
+
         }
 
         private void Currency1_SelectionChanged(object sender, SelectionChangedEventArgs e)
