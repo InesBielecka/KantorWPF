@@ -10,7 +10,7 @@
         <ComboBox x:Name="Currency1" HorizontalAlignment="Left" Margin="48,50,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Currency1_SelectionChanged"/>
         <ComboBox x:Name="Currency2" HorizontalAlignment="Left" Margin="48,129,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Currency2_SelectionChanged"/>
         <Button x:Name="CountingButton" Content="Przelicz" HorizontalAlignment="Left" Margin="48,190,0,0" VerticalAlignment="Top" Width="75" Click="CountingButton_Click"/>
-        <TextBox x:Name="Amount" HorizontalAlignment="Left" Height="23" Margin="244,50,0,0" TextWrapping="Wrap" Text="Wpisz wartość" VerticalAlignment="Top" Width="120" GotFocus="Amount_GotFocus"/>
+        <TextBox x:Name="Amount" HorizontalAlignment="Left" Height="23" Margin="244,50,0,0" TextWrapping="Wrap" Text="Wpisz wartość" VerticalAlignment="Top" Width="120" GotFocus="Amount_GotFocus" PreviewTextInput="NumberValidationTextBox"/>
         <TextBlock x:Name="Result" HorizontalAlignment="Left" Margin="244,129,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="43"/>
 
     </Grid>

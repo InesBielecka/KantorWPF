@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Text.RegularExpressions;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace KantorWPF
 {
@@ -57,10 +60,13 @@ namespace KantorWPF
                 while (reader.Read())
                 {
                     Currency1.Items.Add(reader[0]);
-                    Currency2.Items.Add(reader[0]);
+                
                 }
             }
+           
+
         }
+
 
         private void Amount_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -81,14 +87,27 @@ namespace KantorWPF
 
         private void Currency2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-
+          
 
         }
 
         private void Currency1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Currency2.Items.Clear();
+            foreach (var currency in Currency1.Items)
+            {
+                if (currency != Currency1.SelectedItem)
+                {
+                    Currency2.Items.Add(currency);
+                }
+            }
+            
+        }
 
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
